@@ -1,275 +1,311 @@
 <p align="center">
-  <img src="assets/banner.png" alt="Termite-sumu" width="700"/>
+  <br>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=32&duration=3000&pause=1000&color=FF0000&center=true&vCenter=true&width=600&lines=%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88+TERMITE-SUMU;%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88+Red+Team+%2B+Purple+Team;%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88%E2%96%88+v1.2.0" alt="Termite-sumu"/>
 </p>
 
 <p align="center">
-  <b>Termite-sumu</b> — Authorized Red Team & Purple Team Operations Platform<br>
-  <sub>Silent. Methodical. Lethal — like the insect it is named after.</sub>
+  <img src="https://img.shields.io/badge/version-1.2.0-FF0000?style=for-the-badge&logo=github" alt="Version">
+  <img src="https://img.shields.io/badge/python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/platform-Kali%20Linux-557C94?style=for-the-badge&logo=kali-linux&logoColor=white" alt="Platform">
+  <img src="https://img.shields.io/badge/license-MIT-00FF00?style=for-the-badge" alt="License">
+  <br>
+  <img src="https://img.shields.io/badge/author-C7aWL3R-FF4444?style=flat-square" alt="Author">
+  <img src="https://img.shields.io/badge/contributor-archnexus707-FF8800?style=flat-square" alt="Contributor">
+  <img src="https://img.shields.io/badge/bugs_fixed-46-success?style=flat-square" alt="Bugs">
+  <img src="https://img.shields.io/badge/languages-Python%7CGo%7CC%2B%2B%7CBash-blue?style=flat-square" alt="Languages">
 </p>
 
-<p align="center">
-  <a href="#features">Features</a> •
-  <a href="#screenshots">Screenshots</a> •
-  <a href="#installation">Install</a> •
-  <a href="#architecture">Architecture</a> •
-  <a href="#mitre-attck">MITRE ATT&CK</a> •
-  <a href="#contributing">Contributing</a> •
-  <a href="#license">License</a>
-</p>
+<br>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/version-1.2.0-red?style=flat-square" alt="Version">
-  <img src="https://img.shields.io/badge/python-3.10%2B-blue?style=flat-square" alt="Python">
-  <img src="https://img.shields.io/badge/platform-Kali%20Linux-purple?style=flat-square" alt="Platform">
-  <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="License">
-  <img src="https://img.shields.io/badge/contributor-archnexus707-orange?style=flat-square" alt="Contributor">
+  <b>Silent. Methodical. Lethal.</b> — like the insect it is named after.<br>
+  A multi-protocol, multi-language red team & purple team operations platform<br>
+  built for security professionals operating on Kali Linux.
 </p>
+
+<br>
+
+<p align="center">
+  <img src="assets/screenshot.png" alt="Termite-sumu Screenshot" width="900"/>
+</p>
+
+<br>
 
 ---
 
-## ⚠️ Legal Notice
+## ⚠️ LEGAL
 
-This tool is intended **exclusively** for authorized penetration testing, red team operations, and
-security research. Unauthorized use against systems you do not own or have explicit written
-permission to test is illegal. The authors assume no liability for misuse.
+> This tool is intended **exclusively** for authorized penetration testing, red team operations,
+> and security research. Unauthorized use against systems you do not own or have explicit
+> written permission to test is **illegal**. The authors assume no liability for misuse.
 
 ---
 
-## Features
+## 🎯 FEATURES
 
-### 🎯 Multi-Protocol Session Management
-| Protocol | Purpose |
-|----------|---------|
-| **SSH** | Encrypted remote shell, device enumeration, log collection |
-| **WinRM** | Windows remote management via PowerShell |
-| **SMB** | Windows file share access + remote command execution |
-| **Telnet** | Legacy device connectivity (lab only) |
+### 🔴 Red Team — Offensive Operations
 
-### 🔴 Red Team Operations
-| Domain | Tools Integrated |
-|--------|-----------------|
-| **Active Directory** | BloodHound, Kerberoasting, AS-REP roast, DCSync, Kerbrute, Certipy, ldapdomaindump |
-| **Network Attacks** | Responder, ntlmrelayx, mitm6, PetitPotam |
-| **Reconnaissance** | theHarvester, subfinder, amass, nikto, gobuster, feroxbuster |
-| **Web Attacks** | sqlmap, ffuf, nuclei |
-| **Post-Exploitation** | LinPEAS, WinPEAS, pspy, SUDO_KILLER, SUID enumeration, TS Privesc Enum |
+| Domain | Capability | Tools Wrapped |
+|--------|-----------|---------------|
+| **Active Directory** | Enumeration, Kerberoast, DCSync, AS-REP, Certipy, BloodHound, ldapdomaindump | `impacket`, `bloodhound-python`, `certipy`, `kerbrute` |
+| **Network Attacks** | LLMNR/NBT-NS poisoning, NTLM relay, IPv6 mitm6, PetitPotam coercion | `responder`, `ntlmrelayx`, `mitm6` |
+| **Reconnaissance** | Subdomain enum, directory brute, vulnerability scanning, OSINT | `subfinder`, `amass`, `nuclei`, `gobuster`, `feroxbuster`, `theHarvester` |
+| **Web Attacks** | SQL injection, parameter fuzzing, template scanning | `sqlmap`, `ffuf`, `nuclei` |
+| **Exploit Launching** | One-click tool execution with live output streaming | `nmap`, `crackmapexec`, `evil-winrm`, `impacket`, `metasploit`, `hydra` |
+| **Tunneling** | SOCKS proxy, reverse port forwarding, pivoting | `chisel`, `ligolo-ng`, SSH `-D` |
 
-### 🟣 Purple Team / Evasion
-- **6 obfuscation transforms**: Base64, XOR, PowerShell EncodedCommand, string concatenation, variable randomization
-- **JA3 TLS cipher shuffle** — evades JA3 fingerprint-based detection
-- **HTTP beacon disguise** — C2 traffic masquerading as legitimate HTTP POST
-- **Process masquerade** — `exec -a` renaming
-- **Detection timer** — measure EDR/SIEM detection latency for purple team exercises
+### 🟣 Purple Team — Evasion & Measurement
 
-### 🔵 Blue Team / Defense
-- **30 MITRE ATT&CK signatures** — 15 Linux + 15 Windows
-- **3 anomaly detectors** — brute force, log volume spike, off-hours login
-- **IOC matching** — 8 categories (C2, credential dumper, ransomware, etc.)
-- **YARA rule scanning** — integrate custom `.yar` rules
-- **Threat scoring** — 0-100 weighted score with recommendations
+| Technique | Implementation |
+|-----------|---------------|
+| **Base64 encoding** | `echo PAYLOAD \| base64 -d \| bash` |
+| **XOR obfuscation** | Random single-byte key → self-decoding Python stub |
+| **PowerShell -EncodedCommand** | UTF-16LE → Base64 to bypass AMSI signature matching |
+| **String concatenation** | Split payload into chunks → reconstruct at runtime |
+| **Variable randomization** | Replace `$client`, `$stream` with random names |
+| **JA3 TLS cipher shuffle** | Randomize cipher order per connection to evade JA3 fingerprinting |
+| **HTTP beacon disguise** | C2 traffic wrapped as `POST /api/v1/telemetry` with legitimate User-Agent |
+| **Process masquerade** | `exec -a kworker/u4:2` to hide in process list |
+| **Detection timer** | Measure EDR/SIEM detection latency — Record send → Mark detected → Export report |
+
+### 🔵 Blue Team — Detection & Analysis
+
+| Module | Description |
+|--------|-------------|
+| **30 ATT&CK Signatures** | 15 Linux + 15 Windows regex-based detection rules |
+| **3 Anomaly Detectors** | Brute force (IP correlation), log volume spike (4x baseline), off-hours login (7-19 window) |
+| **IOC Scanner** | 8 categories: C2 frameworks, credential dumpers, exploits, ransomware, keyloggers, malware, anti-analysis, cryptocurrency |
+| **YARA Integration** | Scan files against custom `.yar` rule sets |
+| **Threat Scoring** | Weighted 0-100 score → Critical / High / Medium / Low verdict with remediation steps |
+| **PDF Export** | Full report generation via `reportlab` with dark-themed styling |
 
 ### 🔧 Reverse Engineering
-- **Binary static analysis** — file type, architecture, sections, imports/exports
-- **Entropy profiling** — packer/crypter detection (Shannon entropy)
-- **Capability mapping** — Process Injection, Registry, Anti-debug, Network, Crypto
-- **String extraction** — URLs, IPs, emails, WinAPI calls, shell commands
+
+- **Binary static analysis** — file type detection, architecture identification (ELF/PE/Mach-O)
+- **Shannon entropy profiling** — >7.5 = packed/encrypted, >6.8 = suspicious
+- **Capability mapping** — auto-detect: Process Injection, Registry access, Anti-debug, Network, Crypto
+- **Import/Export enumeration** — DLL dependencies, API calls via `readelf` / `objdump`
+- **Packer detection** — UPX, ASPack, Themida, VMProtect signatures in strings
+- **JSON export** — full analysis report with recommendations
 
 ### 🕵️ Steganography Detection
-- **steghide** — embedded data detection
-- **binwalk** — file carving and extraction
-- **LSB pixel analysis** — entropy-based anomaly detection in images
-- **Audio spectrograms** — visual analysis for hidden signals
-- **Hidden string search** — keys, certificates, emails in binary data
+
+- **steghide** — embedded data detection + capacity check
+- **binwalk** — file carving, embedded file extraction (JPEG, PNG, ZIP, ELF, PE)
+- **LSB pixel analysis** — entropy-based anomaly detection in image LSB planes
+- **Audio spectrograms** — visual analysis via FFmpeg `showspectrumpic`
+- **Hidden string search** — keys, certificates, emails, passwords embedded in binaries
 
 ### ⚡ High-Concurrency Go Backend
-- **11 payload types** generated server-side
-- **TCP / SSL / HTTP-beacon** multi-protocol listeners
-- **Goroutine-per-connection** — 10K+ concurrent sessions
-- **REST API** on `127.0.0.1:9120` consumed by Python GUI
-- **0 external Go dependencies** — stdlib only
+
+```
+127.0.0.1:9120 ─── REST API ─── Python PyQt6 GUI
+     │
+     ├── /health          — uptime, listener/session counts
+     ├── /listeners       — start/stop/list TCP, SSL, HTTP-beacon
+     ├── /sessions        — list, drain output, send commands, kill
+     └── /payloads        — 11 reverse-shell one-liner types
+```
+
+- **Goroutine per connection** — scales to 10,000+ concurrent sessions
+- **Ephemeral TLS certs** — auto-generated per SSL listener
+- **0 external Go dependencies** — pure stdlib
+- **Graceful shutdown** — SIGTERM → drain → close
 
 ### 🖥️ C++ Native Windows Exploitation
-- **CreateRemoteThread** injection (T1055.001)
-- **LSASS memory dump** via MiniDumpWriteDump (T1003.001)
-- **AMSI in-memory patch** (T1562.001)
-- **SYSTEM token steal** via DuplicateTokenEx (T1134.001)
-- **Shellcode executor** with RWX heap allocation
-- Cross-compile from Kali: `make -C cpp_native`
 
-### 🛡️ Security Posture
-- **Zero `shell=True`** — every subprocess uses list-based argv
-- **SecureInputValidator** — all user input validated before command execution
-- **Race-free file creation** — `O_CREAT|O_EXCL` prevents symlink attacks
-- **`os.umask(0o077)`** — no world-readable files
-- **Atomic append-only audit log** — every operator action recorded
-- **Dry-run mode** — `TERMITE_SUMU_DRY_RUN=1` prints commands, executes nothing
+| Technique | MITRE | Implementation |
+|-----------|-------|---------------|
+| **CreateRemoteThread** | T1055.001 | `OpenProcess` → `VirtualAllocEx` → `WriteProcessMemory` → `CreateRemoteThread` |
+| **LSASS Memory Dump** | T1003.001 | `SeDebugPrivilege` → `OpenProcess(LSASS)` → `MiniDumpWriteDump` |
+| **AMSI In-Memory Patch** | T1562.001 | `VirtualProtect(AmsiScanBuffer)` → `mov eax, 0x80070057; ret` |
+| **SYSTEM Token Steal** | T1134.001 | `OpenProcess(winlogon)` → `OpenProcessToken` → `DuplicateTokenEx` → `ImpersonateLoggedOnUser` |
+| **Shellcode Executor** | — | `VirtualAlloc(RWX)` → `memcpy` → direct call |
+| **Process Hollowing** | T1055.012 | Stub — requires PE relocation logic |
+
+Cross-compile from Kali: `make -C cpp_native` (requires `mingw-w64`)
 
 ---
 
-## Screenshots
+## 📸 SCREENSHOTS
 
 <p align="center">
-  <sub><i>Place screenshot here — Main Window with all tabs</i></sub>
+  <img src="assets/screenshot.png" alt="Termite-sumu Main Window" width="900"/>
+  <br>
+  <sub><i>Main window — Reverse Shells tab with listener manager, payload generator, and evasion engine</i></sub>
 </p>
-
-| Reverse Shells | Exploit Launcher | Red Team |
-|:---:|:---:|:---:|
-| <sub>Listener + payload generator</sub> | <sub>Nmap, CME, Impacket, MSF, Hydra</sub> | <sub>AD, Network, Recon, Web, Post-Exploit</sub> |
-
-| Analysis | Reference | Post-Exploit |
-|:---:|:---:|:---:|
-| <sub>30 ATT&CK signatures</sub> | <sub>50+ searchable topics</sub> | <sub>RE, Stego, Defense scan</sub> |
 
 ---
 
-## Installation
+## ⚙️ INSTALLATION
 
-### Prerequisites
 ```bash
-# System deps (Kali/Debian)
+# Clone
+git clone https://github.com/archnexus707/Termite-sumu.git
+cd Termite-sumu
+
+# System dependencies (Kali / Debian)
 sudo apt install -y libsmbclient-dev python3-venv python3-pip mingw-w64
 
-# Python deps
+# Python virtual environment
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-```
 
-### Go Backend (optional — for high-concurrency listeners)
-```bash
-cd gobackend
-go build -o termite-go-backend .
-```
+# Optional: Go backend (high-concurrency listeners)
+cd gobackend && go build -o termite-go-backend . && cd ..
 
-### C++ Native Module (optional — for Windows exploitation)
-```bash
-cd cpp_native
-make    # requires x86_64-w64-mingw32-g++
-```
+# Optional: C++ native module (Windows exploitation)
+cd cpp_native && make && cd ..
 
-### Launch
-```bash
+# Launch
 python main.py
 ```
 
-### Safe Demo Mode
+### Dry-Run Mode (Safe Demos)
+
 ```bash
 export TERMITE_SUMU_DRY_RUN=1
 python main.py
 ```
 
 ### Environment Variables
-| Variable | Default | Purpose |
-|----------|---------|---------|
-| `TERMITE_SUMU_DRY_RUN` | `0` | Print commands without executing |
-| `TERMITE_SUMU_SSH_TOFU` | `0` | Allow interactive SSH host-key prompting |
-| `TERMITE_SUMU_WINRM_INSECURE_TLS` | `0` | Skip WinRM TLS cert validation (lab only) |
+
+| Variable | Default | Effect |
+|----------|---------|--------|
+| `TERMITE_SUMU_DRY_RUN` | `0` | `1` = print commands, execute nothing |
+| `TERMITE_SUMU_SSH_TOFU` | `0` | `1` = prompt on unknown SSH host keys |
+| `TERMITE_SUMU_WINRM_INSECURE_TLS` | `0` | `1` = skip WinRM TLS validation (lab only) |
 
 ---
 
-## Keyboard Shortcuts
+## ⌨️ KEYBOARD SHORTCUTS
 
-| Shortcut | Action |
-|----------|--------|
+| Key | Action |
+|-----|--------|
 | `Ctrl+N` | New Connection |
 | `Ctrl+L` | Collect All Logs |
 | `Ctrl+T` | Open Terminal |
-| `Ctrl+R` | Reverse Shells tab |
-| `Ctrl+E` | Exploit Launcher tab |
-| `Ctrl+G` | Red Team Ops tab |
-| `Ctrl+A` | Deep Analysis tab |
-| `Ctrl+H` | Reference tab |
+| `Ctrl+R` | Reverse Shells |
+| `Ctrl+E` | Exploit Launcher |
+| `Ctrl+G` | Red Team Ops |
+| `Ctrl+A` | Deep Analysis |
+| `Ctrl+H` | Reference |
 | `Ctrl+Q` | Quit |
 
 ---
 
-## Architecture
+## 🏗️ ARCHITECTURE
 
 ```
 Termite-sumu/                         v1.2.0
-├── main.py                           Entry point (Qt6 app)
-├── config/settings.py                App constants, env toggles
-├── core/
-│   ├── reverse_shell.py              Listener manager + 11 payload types
-│   ├── exploit_launcher.py           Nmap, CME, evil-winrm, Impacket, MSF, Hydra
-│   ├── redteam.py                    AD, Network, Recon, Web, Post-Exploit, Tunnel
-│   ├── evasion.py                    6 obfuscation transforms + detection timer
+│
+├── 🐍 main.py                       Qt6 Application Entry
+├── ⚙️ config/settings.py             Constants, env toggles, log sources
+│
+├── 🧠 core/                          Business Logic Layer
+│   ├── reverse_shell.py              Listener Manager + 11 payloads
+│   ├── exploit_launcher.py           6 tools (nmap, cme, evil-winrm, impacket, msf, hydra)
+│   ├── redteam.py                    6 domains × 4-7 tools each
+│   ├── evasion.py                    6 transforms + detection timer
 │   ├── log_analyzer.py               30 ATT&CK sigs + 3 anomaly detectors
 │   ├── validators.py                 SecureInputValidator
-│   ├── audit.py                      Atomic append-only audit logger
-│   ├── go_bridge.py                  Python ↔ Go backend client
+│   ├── audit.py                      Append-only audit logger
+│   ├── go_bridge.py                  Python ↔ Go REST client
 │   ├── reversing/                    Binary static analysis engine
 │   ├── steg/                         Steganography detection pipeline
 │   └── defense/                      IOC + YARA defense scanner
-├── gobackend/                        Go high-concurrency engine
+│
+├── 🐹 gobackend/                     Go High-Concurrency Engine
 │   ├── main.go                       HTTP server (127.0.0.1:9120)
-│   ├── listener/manager.go           TCP/TLS listener pool (goroutines)
+│   ├── listener/manager.go           Goroutine-per-listener TCP/TLS pool
 │   ├── session/manager.go            Per-connection session tracker
 │   └── payload/generator.go          11 reverse-shell one-liners
-├── cpp_native/                       C++ Windows exploitation
-│   ├── injector.cpp                  6 techniques (injection, dump, AMSI, token)
-│   └── Makefile                      Cross-compile via mingw-w64
-├── gui/
-│   ├── main_window.py                Main window, tabs, toolbar
+│
+├── ⚔️ cpp_native/                    C++ Windows Exploitation
+│   ├── src/injector.cpp              6 techniques (injection, dump, AMSI, token)
+│   └── Makefile                      x86_64-w64-mingw32-g++ cross-compile
+│
+├── 🖥️ gui/                           PyQt6 Desktop Interface
+│   ├── main_window.py                Window, tabs, toolbar, status
 │   ├── reverse_shell_tab.py          Listener + payload + evasion UI
 │   ├── exploit_launcher_tab.py       Tool launcher with live output
-│   ├── redteam_tab.py                6-category red team dashboard
-│   ├── analysis_tab.py               Log analysis + ATT&CK findings
-│   ├── reference_tab.py              1,147-line searchable reference
-│   ├── connection_dialog.py          SSH/WinRM/SMB/Telnet connection wizard
+│   ├── redteam_tab.py                6-category dashboard
+│   ├── analysis_tab.py               Log analysis + findings table
+│   ├── reference_tab.py              50+ searchable topics
+│   ├── connection_dialog.py          SSH/WinRM/SMB/Telnet wizard
 │   ├── terminal_widget.py            SSH interactive terminal
 │   └── output_reader.py              Shared QThread subprocess reader
-├── scripts/post_exploit/
+│
+├── 📜 scripts/post_exploit/
 │   └── linux_privesc_enum.sh         10-point Linux privilege escalation check
-├── reports/pdf_report.py             reportlab PDF generator
-└── HUNTED_BUGS_AND_ERRORS.txt        Full audit: 46 bugs found + fixed
+│
+├── 📊 reports/pdf_report.py          reportlab PDF generator
+└── 📋 HUNTED_BUGS_AND_ERRORS.txt     Full 8,500-line code audit
+
+🐍 Python  |  🐹 Go  |  ⚔️ C++  |  📜 Bash
 ```
 
 ---
 
-## MITRE ATT&CK Coverage
+## 🎯 MITRE ATT&CK COVERAGE
 
-| Tactic | Techniques |
-|--------|-----------|
-| **Initial Access** | T1190, T1566, T1078 |
+| Tactic | Techniques Covered |
+|--------|-------------------|
+| **Initial Access** | T1190, T1566, T1078, T1078.004 |
 | **Execution** | T1059, T1218, T1053, T1059.001, T1059.004 |
 | **Persistence** | T1547.001, T1543.003, T1546.003, T1053.003, T1053.005, T1136.001, T1547.006 |
 | **Privilege Escalation** | T1548.001, T1068, T1134, T1134.001, T1548.003 |
-| **Defense Evasion** | T1027, T1553.002, T1070, T1562, T1562.001, T1055.001, T1055.012 |
+| **Defense Evasion** | T1027, T1553.002, T1070, T1562, T1562.001, T1562.002, T1055.001, T1055.012 |
 | **Credential Access** | T1003, T1558.003, T1558.004, T1110, T1003.001, T1003.006, T1003.008, T1558.001 |
 | **Discovery** | T1087, T1083, T1057, T1046, T1082 |
 | **Lateral Movement** | T1021, T1550.002, T1572, T1021.002 |
 | **Collection** | T1005, T1564.003 |
-| **Command & Control** | T1071, T1071.001, T1041 |
+| **Command & Control** | T1071, T1071.001, T1041, T1090 |
 | **Exfiltration** | T1048 |
 | **Impact** | T1486 |
 
 ---
 
-## Authors
+## 👥 AUTHORS
 
-| Role | Name | GitHub |
-|------|------|--------|
-| **Author** | C7aWL3R | [@C7aWL3R](https://github.com/C7aWL3R) |
-| **Contributor** | archnexus707 | [@archnexus707](https://github.com/archnexus707) |
+<table>
+<tr>
+<td align="center" width="50%">
+  <b>C7aWL3R</b><br>
+  <sub>Author</sub><br><br>
+  <a href="https://github.com/C7aWL3R">
+    <img src="https://img.shields.io/badge/GitHub-C7aWL3R-FF0000?style=flat-square&logo=github">
+  </a>
+</td>
+<td align="center" width="50%">
+  <b>archnexus707</b><br>
+  <sub>Contributor — v1.2.0</sub><br><br>
+  <a href="https://github.com/archnexus707">
+    <img src="https://img.shields.io/badge/GitHub-archnexus707-FF8800?style=flat-square&logo=github">
+  </a>
+</td>
+</tr>
+</table>
 
-### Contributions by archnexus707 (v1.2.0)
-- **46 bug fixes** across core, GUI, payload, and session management
-- **Go backend** — high-concurrency listener/session/payload engine
-- **C++ native module** — 6 Windows exploitation techniques
-- **Reverse engineering engine** — binary static analysis + entropy + capability mapping
+### v1.2.0 Contributions by archnexus707
+
+- **46 bug fixes** — critical (TLS, SSH policy, thread safety), severe (payload, CRLF, attribute mismatches), logical (session buffer, dead-send feedback)
+- **Go backend** — high-concurrency listener/session/payload REST API engine
+- **C++ native module** — 6 Windows exploitation techniques (injection, dump, AMSI, token)
+- **Reverse engineering engine** — binary static analysis, entropy, capability mapping
 - **Steganography detection** — steghide, binwalk, LSB, spectrograms
-- **Defensive scanner** — IOC matching, YARA integration, threat scoring
-- **Cross-platform protocol fixes** — CRLF line endings, thread safety, Qt signal marshalling
+- **Defensive scanner** — IOC matching, YARA integration, threat scoring 0-100
+- **Cross-platform protocol fixes** — CRLF/LF, Qt thread safety, signal marshalling
 - **Full 8,500-line code audit** — documented in `HUNTED_BUGS_AND_ERRORS.txt`
 
 ---
 
-## License
+## 📄 LICENSE
 
 MIT — see [LICENSE](LICENSE)
 
-> **Responsible Disclosure**: If you discover a security issue in this tool itself, please
-> report it privately before public disclosure.
+> **Responsible Disclosure**: If you discover a security issue in this tool itself,
+> please report it privately before public disclosure.
 
 ---
 
