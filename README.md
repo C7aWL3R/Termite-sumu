@@ -11,7 +11,6 @@
   <br>
   <img src="https://img.shields.io/badge/author-C7aWL3R-FF4444?style=flat-square" alt="Author">
   <img src="https://img.shields.io/badge/contributor-archnexus707-FF8800?style=flat-square" alt="Contributor">
-  <img src="https://img.shields.io/badge/bugs_fixed-46-success?style=flat-square" alt="Bugs">
   <img src="https://img.shields.io/badge/languages-Python%7CGo%7CC%2B%2B%7CBash-blue?style=flat-square" alt="Languages">
 </p>
 
